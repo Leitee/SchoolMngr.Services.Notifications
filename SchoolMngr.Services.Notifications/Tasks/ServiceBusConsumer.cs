@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Fitnner.Trainers.Notifications
+namespace SchoolMngr.Services.Notifications
 {
     public class ServiceBusConsumer : BackgroundService
     {

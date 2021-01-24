@@ -1,16 +1,12 @@
 /// <summary>
 /// 
 /// </summary>
-namespace Fitnner.Trainers.Notifications
+namespace SchoolMngr.Services.Notifications
 {
-    using Fitnner.Infrastructure.Shared;
-    using Fitnner.Infrastructure.Shared.Configuration;
-    using Fitnner.Trainers.Notifications.Hubs;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
+    using SchoolMngr.Infrastructure.Shared.Configuration;
     using Serilog;
     using System;
 

@@ -1,4 +1,4 @@
-﻿using Fitnner.Trainers.Notifications.Hubs;
+﻿using SchoolMngr.Services.Notifications.Hubs;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
@@ -6,7 +6,7 @@ using Pandora.NetStdLibrary.Base.Common;
 using System;
 using System.Threading.Tasks;
 
-namespace Fitnner.Trainers.Notifications
+namespace SchoolMngr.Services.Notifications
 {
     public class ClientNotificationIntegrationEventHandler : IIntegrationEventHandler<CrudNotificationIntegrationEventPayload>
     {

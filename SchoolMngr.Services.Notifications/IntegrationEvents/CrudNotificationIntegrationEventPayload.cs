@@ -1,14 +1,14 @@
 ﻿/// <summary>
 /// 
 /// </summary>
-namespace Fitnner.Trainers.Notifications
+namespace SchoolMngr.Services.Notifications
 {
     using Pandora.NetStdLibrary.Base.Abstractions;
     using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
     using Pandora.NetStdLibrary.Base.Constants;
     using System;
 
-    public class CrudNotificationIntegrationEventPayload : IntegrationEventPayload, IClientNotification
+    public class CrudNotificationIntegrationEventPayload : IntegrationEventPayload
     {
         public Guid ClientID { get; private set; }
         public string Message { get; private set; }

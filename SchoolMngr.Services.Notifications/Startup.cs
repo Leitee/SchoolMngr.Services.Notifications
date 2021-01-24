@@ -1,10 +1,10 @@
 /// <summary>
 /// 
 /// </summary>
-namespace Fitnner.Trainers.Notifications
+namespace SchoolMngr.Services.Notifications
 {
-    using Fitnner.Infrastructure.Shared;
-    using Fitnner.Trainers.Notifications.Hubs;
+    using SchoolMngr.Infrastructure.Shared;
+    using SchoolMngr.Services.Notifications.Hubs;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http.Connections;

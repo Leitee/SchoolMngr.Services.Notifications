@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 
 /// </summary>
-namespace Fitnner.Trainers.Notifications.Hubs
+namespace SchoolMngr.Services.Notifications.Hubs
 {
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.SignalR;

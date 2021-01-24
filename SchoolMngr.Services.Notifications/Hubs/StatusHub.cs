@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Fitnner.Trainers.Notifications.Hubs
+namespace SchoolMngr.Services.Notifications.Hubs
 {
     public class StatusHub : Hub
     {

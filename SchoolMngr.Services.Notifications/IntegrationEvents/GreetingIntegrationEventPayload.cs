@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 
 /// </summary>
-namespace Fitnner.Trainers.Notifications
+namespace SchoolMngr.Services.Notifications
 {
     using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
     public class GreetingIntegrationEventPayload : IntegrationEventPayload
