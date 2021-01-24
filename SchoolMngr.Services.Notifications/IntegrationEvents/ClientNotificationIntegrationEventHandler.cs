@@ -1,0 +1,28 @@
+﻿using Fitnner.Trainers.Notifications.Hubs;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Logging;
+using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
+using Pandora.NetStdLibrary.Base.Common;
+using System;
+using System.Threading.Tasks;
+
+namespace Fitnner.Trainers.Notifications
+{
+    public class ClientNotificationIntegrationEventHandler : IIntegrationEventHandler<CrudNotificationIntegrationEventPayload>
+    {
+        private readonly ILogger<ClientNotificationIntegrationEventHandler> _logger;
+        private readonly IHubContext<NotificationsHub> _hubContext;
+
+        public ClientNotificationIntegrationEventHandler(IHubContext<NotificationsHub> hubContext, ILoggerFactory loggerFactory)
+        {
+            _hubContext = hubContext ?? throw new ArgumentNullException(nameof(hubContext));
+            _logger = (loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory))).CreateLogger<ClientNotificationIntegrationEventHandler>();
+        }
+
+        public async Task Handle(CrudNotificationIntegrationEventPayload @event)
+        {
+            _logger.LogDebug($"Notification to client: {@event.ClientID} of type {@event.ClientOperation.GetDescription()}");
+            await _hubContext.Clients.Group(@event.ClientID.ToString()).SendAsync("GreetingSent", @event);
+        }
+    }
+}

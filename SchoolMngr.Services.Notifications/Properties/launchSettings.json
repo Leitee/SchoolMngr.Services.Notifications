@@ -1,0 +1,48 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:7288",
+      "sslPort": 0 //7243
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": false,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "EventBusConnection": "192.168.1.10",
+        "EventBusUserName": "guest",
+        "EventBusPassword": "guest"
+      }
+    },
+    "Fitnner.Trainers.Notification": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "EventBusConnection": "192.168.1.10",
+        "EventBusUserName": "guest",
+        "EventBusPassword": "guest"
+      },
+      "applicationUrl": "https://localhost:7243;http://localhost:7280"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api",
+      "publishAllPorts": true,
+      "environmentVariables": {
+        "ConnectionString": "User ID=postgres;Password=Devadmin321;Host=localhost;Port=5432;Database=fitnner-trainers-backoffice;Pooling=true;",
+        "Serilog:LogstashgUrl": "http://locahost:8080",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "EventBusConnection": "192.168.1.10",
+        "EventBusUserName": "guest",
+        "EventBusPassword": "guest"
+      }
+    }
+  }
+}

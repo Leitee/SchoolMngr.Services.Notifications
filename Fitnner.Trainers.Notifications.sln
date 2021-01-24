@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fitnner.Trainers.Notifications.Test", "Fitnner.Trainers.Notifications.Test\Fitnner.Trainers.Notifications.Test.csproj", "{56D24B02-9A0E-4ADE-B7C0-294DAA9F5C4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fitnner.Trainers.Notifications", "Fitnner.Trainers.Notifications\Fitnner.Trainers.Notifications.csproj", "{311A45E5-51EB-4546-86A9-30158AEDA7C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56D24B02-9A0E-4ADE-B7C0-294DAA9F5C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D24B02-9A0E-4ADE-B7C0-294DAA9F5C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D24B02-9A0E-4ADE-B7C0-294DAA9F5C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D24B02-9A0E-4ADE-B7C0-294DAA9F5C4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{311A45E5-51EB-4546-86A9-30158AEDA7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{311A45E5-51EB-4546-86A9-30158AEDA7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{311A45E5-51EB-4546-86A9-30158AEDA7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{311A45E5-51EB-4546-86A9-30158AEDA7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB1A5E77-24B7-4916-BB1C-6CB885D758AA}
+	EndGlobalSection
+EndGlobal
