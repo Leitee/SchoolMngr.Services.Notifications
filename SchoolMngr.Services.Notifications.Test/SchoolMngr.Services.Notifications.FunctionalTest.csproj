@@ -21,6 +21,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Fitnner.Trainers.Notifications\Fitnner.Trainers.Notifications.csproj" />
+    <ProjectReference Include="..\SchoolMngr.Services.Notifications\SchoolMngr.Services.Notifications.csproj" />
   </ItemGroup>
 </Project>
