@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
-using Pandora.NetStdLibrary.Base.Common;
+using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
+using Codeit.NetStdLibrary.Base.Common;
 using System;
 using System.Text;
 using System.Threading;

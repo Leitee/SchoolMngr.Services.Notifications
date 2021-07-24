@@ -3,7 +3,7 @@
 /// </summary>
 namespace SchoolMngr.Services.Notifications
 {
-    using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
+    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
     public class GreetingIntegrationEventPayload : IntegrationEventPayload
     {
         public string SenderName { get; set; }

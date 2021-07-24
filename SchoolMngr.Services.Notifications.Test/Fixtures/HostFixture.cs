@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Codeit.NetStdLibrary.Base.Abstractions.Tests;
+using Codeit.NetStdLibrary.Base.DataAccess;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
-using Pandora.NetStdLibrary.Base.Abstractions.Tests;
-using Pandora.NetStdLibrary.Base.DataAccess;
-using Fitnner.Trainers.Notifications.Hubs;
+using SchoolMngr.Services.Notifications.Hubs;
 
 namespace Fitnner.Trainers.Notifications.FunctionalTest.Fixtures
 {

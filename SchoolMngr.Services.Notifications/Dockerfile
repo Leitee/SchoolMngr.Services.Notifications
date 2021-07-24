@@ -8,7 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["src/trainers/notification/SchoolMngr.Services.Notification/SchoolMngr.Services.Notification.csproj", "src/trainers/notification/SchoolMngr.Services.Notification/"]
-COPY ["src/core/base/Pandora.NetStdLibrary.Base/Pandora.NetStdLibrary.Base.csproj", "src/core/base/Pandora.NetStdLibrary.Base/"]
+COPY ["src/core/base/Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.csproj", "src/core/base/Codeit.NetStdLibrary.Base/"]
 COPY ["src/core/shared/SchoolMngr.Services.Shared.csproj", "src/core/shared/"]
 RUN dotnet restore "src/trainers/notification/SchoolMngr.Services.Notification/SchoolMngr.Services.Notification.csproj"
 COPY . .

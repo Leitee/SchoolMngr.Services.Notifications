@@ -1,15 +1,13 @@
 ﻿namespace Fitnner.Trainers.Notifications.FunctionalTest
 {
-    using Microsoft.AspNetCore.Hosting;
+    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
+    using Codeit.NetStdLibrary.Base.Desentralized.EventBus;
+    using Codeit.NetStdLibrary.Base.Desentralized.EventBusRabbitMQ;
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Logging.Abstractions;
-    using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
-    using Pandora.NetStdLibrary.Base.Desentralized.EventBus;
-    using Pandora.NetStdLibrary.Base.Desentralized.EventBusRabbitMQ;
     using RabbitMQ.Client;
     using System;
     using System.Threading;
-    using System.Threading.Tasks;
 
     class Program
     {

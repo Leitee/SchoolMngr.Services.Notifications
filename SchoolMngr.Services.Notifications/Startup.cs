@@ -10,7 +10,7 @@ namespace SchoolMngr.Services.Notifications
     using Microsoft.AspNetCore.Http.Connections;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Pandora.NetStdLibrary.Base.Abstractions.Desentralized;
+    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
     using Serilog;
 
     public class Startup
