@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\..\..\..</DockerfileContext>
+    <DockerfileContext>..\..\..</DockerfileContext>
     <UserSecretsId>e26ab4ab-193a-400d-91ca-50254c485d7d</UserSecretsId>
     <LangVersion>latest</LangVersion>
     <FileUpgradeFlags>

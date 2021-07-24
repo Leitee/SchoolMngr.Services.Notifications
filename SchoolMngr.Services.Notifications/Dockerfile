@@ -1,24 +1,24 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["src/trainers/notification/SchoolMngr.Services.Notification/SchoolMngr.Services.Notification.csproj", "src/trainers/notification/SchoolMngr.Services.Notification/"]
-COPY ["src/core/base/Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.csproj", "src/core/base/Codeit.NetStdLibrary.Base/"]
-COPY ["src/core/shared/SchoolMngr.Services.Shared.csproj", "src/core/shared/"]
-RUN dotnet restore "src/trainers/notification/SchoolMngr.Services.Notification/SchoolMngr.Services.Notification.csproj"
+COPY ["microservices/notifications/SchoolMngr.Services.Notifications/SchoolMngr.Services.Notifications.csproj", "microservices/notifications/SchoolMngr.Services.Notifications/"]
+COPY ["infrastructure/shared/SchoolMngr.Infrastructure.Shared.csproj", "infrastructure/shared/"]
+COPY ["../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.csproj", "../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base/"]
+COPY ["../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.Abstractions/Codeit.NetStdLibrary.Base.Abstractions.csproj", "../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.Abstractions/"]
+RUN dotnet restore "microservices/notifications/SchoolMngr.Services.Notifications/SchoolMngr.Services.Notifications.csproj"
 COPY . .
-WORKDIR "/src/src/trainers/notification/SchoolMngr.Services.Notification"
-RUN dotnet build "SchoolMngr.Services.Notification.csproj" -c Release -o /app/build
+WORKDIR "/src/microservices/notifications/SchoolMngr.Services.Notifications"
+RUN dotnet build "SchoolMngr.Services.Notifications.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "SchoolMngr.Services.Notification.csproj" -c Release -o /app/publish
+RUN dotnet publish "SchoolMngr.Services.Notifications.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SchoolMngr.Services.Notification.dll"]
+ENTRYPOINT ["dotnet", "SchoolMngr.Services.Notifications.dll"]
