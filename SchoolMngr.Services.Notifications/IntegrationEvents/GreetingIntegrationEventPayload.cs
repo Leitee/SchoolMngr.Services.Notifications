@@ -1,7 +1,4 @@
-﻿/// <summary>
-/// 
-/// </summary>
-namespace SchoolMngr.Services.Notifications
+﻿namespace SchoolMngr.Services.Notifications.IntegrationEvents
 {
     using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
     public class GreetingIntegrationEventPayload : IntegrationEventPayload

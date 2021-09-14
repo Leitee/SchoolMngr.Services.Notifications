@@ -1,4 +1,4 @@
-﻿using Fitnner.Trainers.Notifications.FunctionalTest.Fixtures;
+﻿using SchoolMngr.Services.Notifications.FunctionalTest.Fixtures;
 using FluentAssertions;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.AspNetCore.TestHost;
@@ -6,7 +6,7 @@ using System;
 using System.Threading;
 using Xunit;
 
-namespace Fitnner.Trainers.Notifications.FunctionalTest.Scenarios
+namespace SchoolMngr.Services.Notifications.FunctionalTest.Scenarios
 {
     public class HubScenariosTest : IClassFixture<HostFixture>
     {

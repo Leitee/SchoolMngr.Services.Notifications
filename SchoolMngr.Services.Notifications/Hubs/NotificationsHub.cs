@@ -1,9 +1,7 @@
-﻿/// <summary>
-/// 
-/// </summary>
+﻿
 namespace SchoolMngr.Services.Notifications.Hubs
 {
-    using Microsoft.AspNetCore.Authorization;
+    using Codeit.NetStdLibrary.Base.DomainModel;
     using Microsoft.AspNetCore.SignalR;
     using System;
     using System.Threading.Tasks;
@@ -14,14 +12,19 @@ namespace SchoolMngr.Services.Notifications.Hubs
 
         public override async Task OnConnectedAsync()
         {
-            await Groups.AddToGroupAsync(Context.ConnectionId, Context.User.Identity.Name);
+            //await Groups.AddToGroupAsync(Context.ConnectionId, Context.User.Identity.Name);
             await base.OnConnectedAsync();
         }
 
         public override async Task OnDisconnectedAsync(Exception ex)
         {
-            await Groups.RemoveFromGroupAsync(Context.ConnectionId, Context.User.Identity.Name);
+            //await Groups.RemoveFromGroupAsync(Context.ConnectionId, Context.User.Identity.Name);
             await base.OnDisconnectedAsync(ex);
+        }
+
+        public async Task SendNotificationAsync(string connectionId, string callbackName, ClientNotificationResult payload)
+        {
+            await Clients.Client(connectionId).SendAsync(callbackName, payload);
         }
     }
 }

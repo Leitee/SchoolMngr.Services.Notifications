@@ -1,12 +1,13 @@
-﻿using SchoolMngr.Services.Notifications.Hubs;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.Extensions.Logging;
-using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
-using System;
-using System.Threading.Tasks;
-
-namespace SchoolMngr.Services.Notifications
+﻿
+namespace SchoolMngr.Services.Notifications.IntegrationEvents
 {
+    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
+    using Microsoft.AspNetCore.SignalR;
+    using Microsoft.Extensions.Logging;
+    using SchoolMngr.Services.Notifications.Hubs;
+    using System;
+    using System.Threading.Tasks;
+
     public class ProccessGreetingIntegrationEventHandler : IIntegrationEventHandler<GreetingIntegrationEventPayload>
     {
         private readonly ILogger<ProccessGreetingIntegrationEventHandler> _logger;

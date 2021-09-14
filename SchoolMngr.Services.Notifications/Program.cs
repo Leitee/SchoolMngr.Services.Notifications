@@ -1,12 +1,10 @@
-/// <summary>
-/// 
-/// </summary>
+
 namespace SchoolMngr.Services.Notifications
 {
+    using SchoolMngr.Infrastructure.Shared.Configuration;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
-    using SchoolMngr.Infrastructure.Shared.Configuration;
     using Serilog;
     using System;
 

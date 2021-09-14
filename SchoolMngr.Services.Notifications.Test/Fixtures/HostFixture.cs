@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using SchoolMngr.Services.Notifications.Hubs;
 
-namespace Fitnner.Trainers.Notifications.FunctionalTest.Fixtures
+namespace SchoolMngr.Services.Notifications.FunctionalTest.Fixtures
 {
     public class HostFixture : IHostFixture
     {
@@ -26,7 +26,8 @@ namespace Fitnner.Trainers.Notifications.FunctionalTest.Fixtures
                     })
                     .Configure(app =>
                     {
-                        app.UseResponseCompression();
+                        //app.UseResponseCompression();
+                        app.UseRouting();
                         app.UseEndpoints(routes => routes.MapHub<StatusHub>("/hub/status"));
                     });
 

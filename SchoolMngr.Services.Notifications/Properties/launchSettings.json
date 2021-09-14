@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:7288",
-      "sslPort": 0 //7243
+      "applicationUrl": "http://localhost:7788",
+      "sslPort": 7743
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -19,7 +19,7 @@
         "EventBusPassword": "guest"
       }
     },
-    "SchoolMngr.Notification": {
+    "Kestrel": {
       "commandName": "Project",
       "launchBrowser": false,
       "environmentVariables": {
@@ -28,7 +28,7 @@
         "EventBusUserName": "guest",
         "EventBusPassword": "guest"
       },
-      "applicationUrl": "https://localhost:7243;http://localhost:7280"
+      "applicationUrl": "https://localhost:7743;http://localhost:7780"
     },
     "Docker": {
       "commandName": "Docker",
@@ -36,7 +36,7 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api",
       "publishAllPorts": true,
       "environmentVariables": {
-        "ConnectionString": "User ID=postgres;Password=Devadmin321;Host=localhost;Port=5432;Database=schoolmngr-trainers-backoffice;Pooling=true;",
+        "ConnectionString": "User ID=postgres;Password=Devadmin321;Host=localhost;Port=5432;Database=schoolmngr-backoffice;Pooling=true;",
         "Serilog:LogstashgUrl": "http://locahost:8080",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "EventBusConnection": "192.168.1.10",

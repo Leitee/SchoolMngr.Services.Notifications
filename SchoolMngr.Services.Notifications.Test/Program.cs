@@ -1,13 +1,15 @@
-﻿namespace Fitnner.Trainers.Notifications.FunctionalTest
+﻿namespace SchoolMngr.Services.Notifications.FunctionalTest
 {
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Logging.Abstractions;
     using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
     using Codeit.NetStdLibrary.Base.Desentralized.EventBus;
     using Codeit.NetStdLibrary.Base.Desentralized.EventBusRabbitMQ;
-    using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Logging.Abstractions;
     using RabbitMQ.Client;
     using System;
     using System.Threading;
+    using System.Threading.Tasks;
 
     class Program
     {

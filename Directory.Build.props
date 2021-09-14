@@ -1,0 +1,35 @@
+<Project>  
+  <PropertyGroup Label="SDK and Lang Versions">
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  
+  <ItemGroup Label="Global Package Imports">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <PropertyGroup Label="Global Package Versions">
+    <SchoolMngrSharedPackage>0.4.1</SchoolMngrSharedPackage>
+    <!--<EntityFrameworkAllPackageVersion>5.0.7</EntityFrameworkAllPackageVersion>
+    <MicrosoftExtensionsConfigurationAllPackageVersion>5.0.0</MicrosoftExtensionsConfigurationAllPackageVersion>-->
+  </PropertyGroup>
+  
+  <!--DO NOT CHANGE CODE BELOW-->
+  <PropertyGroup Label="Check If Exist">
+    <MicroservicesTarget>$([MSBuild]::GetPathOfFileAbove('SchoolMngr.Infrastructure.Shared.csproj', '$(MSBuildThisFileDirectory)../../infrastructure/shared'))</MicroservicesTarget>
+  </PropertyGroup>
+  
+  <Choose>
+    <When Condition="Exists('$(MicroservicesTarget)')">
+      <ItemGroup>        
+        <ProjectReference Include="..\..\..\infrastructure\shared\SchoolMngr.Infrastructure.Shared.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>        
+        <PackageReference Include="SchoolMngr.Infrastructure.Shared" Version="$(SchoolMngrSharedPackage)" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+</Project>

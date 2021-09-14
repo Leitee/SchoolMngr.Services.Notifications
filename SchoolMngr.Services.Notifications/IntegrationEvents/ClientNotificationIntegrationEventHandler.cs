@@ -1,13 +1,14 @@
-﻿using SchoolMngr.Services.Notifications.Hubs;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.Extensions.Logging;
-using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
-using Codeit.NetStdLibrary.Base.Common;
-using System;
-using System.Threading.Tasks;
-
-namespace SchoolMngr.Services.Notifications
+﻿
+namespace SchoolMngr.Services.Notifications.IntegrationEvents
 {
+    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
+    using Codeit.NetStdLibrary.Base.Desentralized.IntegrationEvent;
+    using Microsoft.AspNetCore.SignalR;
+    using Microsoft.Extensions.Logging;
+    using SchoolMngr.Services.Notifications.Hubs;
+    using System;
+    using System.Threading.Tasks;
+
     public class ClientNotificationIntegrationEventHandler : IIntegrationEventHandler<CrudNotificationIntegrationEventPayload>
     {
         private readonly ILogger<ClientNotificationIntegrationEventHandler> _logger;
@@ -21,8 +22,8 @@ namespace SchoolMngr.Services.Notifications
 
         public async Task Handle(CrudNotificationIntegrationEventPayload @event)
         {
-            _logger.LogDebug($"Notification to client: {@event.ClientID} of type {@event.ClientOperation.GetDescription()}");
-            await _hubContext.Clients.Group(@event.ClientID.ToString()).SendAsync("GreetingSent", @event);
+            _logger.LogDebug($"Notification to client: {@event.WSConnectionId} - {@event.Payload}");
+            await _hubContext.Clients.Client(@event.WSConnectionId).SendAsync(@event.CallBackMethod, @event.Payload);
         }
     }
 }

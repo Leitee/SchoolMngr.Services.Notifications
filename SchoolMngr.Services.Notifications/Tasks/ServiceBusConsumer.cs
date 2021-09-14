@@ -16,12 +16,11 @@ namespace SchoolMngr.Services.Notifications
         // Connection String for the namespace can be obtained from the Azure portal under the 
         // 'Shared Access policies' section.
         private readonly ILogger<ServiceBusConsumer> _logger;
-        private readonly BaseSettings _settings;
         private readonly IEventBus _eventBus;
 
         public ServiceBusConsumer(IConfiguration configuration, IEventBus eventBus, ILoggerFactory loggerFactory)
         {
-            _settings = BaseSettings.GetSection(configuration ?? throw new ArgumentNullException(nameof(configuration)));
+            //_settings = BaseSettings.GetSection(configuration ?? throw new ArgumentNullException(nameof(configuration)));
             _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
             _logger = (loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory))).CreateLogger<ServiceBusConsumer>();
         }
