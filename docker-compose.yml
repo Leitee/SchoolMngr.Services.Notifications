@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  notifications:
+    image: ${DOCKER_REGISTRY:-schoolmngr}/notifications:${PLATFORM:-linux}-${TAG:-latest}
+    container_name: SchoolMngr.Notifications
+    build:
+      context: .
+      dockerfile: SchoolMngr.Services.Notifications/Dockerfile

@@ -36,12 +36,12 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api",
       "publishAllPorts": true,
       "environmentVariables": {
-        "ConnectionString": "User ID=postgres;Password=Devadmin321;Host=localhost;Port=5432;Database=schoolmngr-backoffice;Pooling=true;",
         "Serilog:LogstashgUrl": "http://locahost:8080",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "EventBusConnection": "192.168.1.10",
         "EventBusUserName": "guest",
-        "EventBusPassword": "guest"
+        "EventBusPassword": "guest",
+        "COMPOSE_PROJECT_NAME": "SchoolMngr.Notifications"
       }
     }
   }

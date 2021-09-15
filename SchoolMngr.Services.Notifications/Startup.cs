@@ -64,7 +64,7 @@ namespace SchoolMngr.Services.Notifications
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
             eventBus.Subscribe<GreetingIntegrationEventPayload, ProccessGreetingIntegrationEventHandler>();
-            eventBus.Subscribe<CrudNotificationIntegrationEventPayload, ClientNotificationIntegrationEventHandler>();
+            eventBus.Subscribe<ClientNotificationIntegrationEventPayload, ClientNotificationIntegrationEventHandler>();
             return app;
         }
     }

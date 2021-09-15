@@ -9,7 +9,7 @@ namespace SchoolMngr.Services.Notifications.IntegrationEvents
     using System;
     using System.Threading.Tasks;
 
-    public class ClientNotificationIntegrationEventHandler : IIntegrationEventHandler<CrudNotificationIntegrationEventPayload>
+    public class ClientNotificationIntegrationEventHandler : IIntegrationEventHandler<ClientNotificationIntegrationEventPayload>
     {
         private readonly ILogger<ClientNotificationIntegrationEventHandler> _logger;
         private readonly IHubContext<NotificationsHub> _hubContext;
@@ -20,7 +20,7 @@ namespace SchoolMngr.Services.Notifications.IntegrationEvents
             _logger = (loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory))).CreateLogger<ClientNotificationIntegrationEventHandler>();
         }
 
-        public async Task Handle(CrudNotificationIntegrationEventPayload @event)
+        public async Task Handle(ClientNotificationIntegrationEventPayload @event)
         {
             _logger.LogDebug($"Notification to client: {@event.WSConnectionId} - {@event.Payload}");
             await _hubContext.Clients.Client(@event.WSConnectionId).SendAsync(@event.CallBackMethod, @event.Payload);
