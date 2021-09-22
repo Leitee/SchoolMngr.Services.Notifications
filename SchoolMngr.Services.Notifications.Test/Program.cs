@@ -51,8 +51,8 @@
             new Program();
             for (int i = 1; i < 100; i++)
             {
-                _queueClient.Publish(new GreetingIntegrationEventPayload("Hayek", $"Dummy message number: {i}"));
-                Console.WriteLine("Message sent!!!");
+                _queueClient.Publish(new GreetingIntegrationEventPayload("Hayek", $"Dummy greeting: {i}"));
+                Console.WriteLine($"Message {i} sent at {DateTime.Now.ToString("HH:mm:ss")}!!!");
                 Thread.Sleep(3000);
             }
 
