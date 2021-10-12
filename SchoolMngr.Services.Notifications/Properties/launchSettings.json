@@ -11,35 +11,33 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": false,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "EventBusConnection": "192.168.1.10",
+        "EventBusPassword": "guest",
         "EventBusUserName": "guest",
-        "EventBusPassword": "guest"
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "EventBusConnection": "192.168.1.10"
       }
     },
     "Kestrel": {
       "commandName": "Project",
-      "launchBrowser": false,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "EventBusConnection": "192.168.1.10",
+        "EventBusPassword": "guest",
         "EventBusUserName": "guest",
-        "EventBusPassword": "guest"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "EventBusConnection": "192.168.1.10"
       },
-      "applicationUrl": "https://localhost:7743;http://localhost:7780"
+      "applicationUrl": "http://localhost:7300"
     },
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api",
-      "publishAllPorts": true,
       "environmentVariables": {
         "Serilog:LogstashgUrl": "http://locahost:8080",
         "ASPNETCORE_ENVIRONMENT": "Docker",
         "COMPOSE_PROJECT_NAME": "SchoolMngr.Notifications"
-      }
+      },
+      "publishAllPorts": true
     }
   }
 }

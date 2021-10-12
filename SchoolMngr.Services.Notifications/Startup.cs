@@ -21,7 +21,6 @@ namespace SchoolMngr.Services.Notifications
             Configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services
@@ -33,10 +32,8 @@ namespace SchoolMngr.Services.Notifications
                 .AddCheck("Self", _ => HealthCheckResult.Healthy());
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            // This will make the HTTP requests log as rich logs instead of plain text.
             app
                 .UseSerilogRequestLogging()
                 .UseEventBus()

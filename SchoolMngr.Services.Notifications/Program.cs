@@ -1,10 +1,10 @@
 
 namespace SchoolMngr.Services.Notifications
 {
-    using SchoolMngr.Infrastructure.Shared.Configuration;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
+    using SchoolMngr.Infrastructure.Shared.Configuration;
     using Serilog;
     using System;
 
@@ -18,20 +18,20 @@ namespace SchoolMngr.Services.Notifications
 
             try
             {
-                Log.Information("Configuring web host ({ApplicationContext})...", _appName);
+                Log.Information("Configuring web host ({ApplicationName})...");
                 var host = Host
                     .CreateDefaultBuilder(args)
                     .UseMetricsEndpoints()
                     .ConfigureWebHostDefaults(wb => wb.UseStartup<Startup>())
-                    .UseSerilog()
+                    .UseSerilog(Log.Logger)
                     .Build();
 
-                Log.Information("Starting web host ({ApplicationContext})...", _appName);
+                Log.Information("Starting web host ({ApplicationName})...");
                 host.Run();
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "Application failed at start up");
+                Log.Fatal(ex, "Application failed at start up.");
             }
             finally
             {
@@ -41,3 +41,4 @@ namespace SchoolMngr.Services.Notifications
     }
 }
 
+  
