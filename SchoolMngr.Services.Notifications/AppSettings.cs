@@ -6,6 +6,6 @@ namespace SchoolMngr.Services.Backoffice
 
     public class AppSettings : BaseSettings<AppSettings>
     {
-        public InfrastructureSettings InfrastructureSection { get; set; }
+        public INFRASettings InfraSection { get; set; }
     }
 }
