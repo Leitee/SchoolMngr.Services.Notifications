@@ -49,7 +49,7 @@ namespace SchoolMngr.Services.Notifications
             //queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
         }
 
-        async Task ProcessMessagesAsync(Message message, CancellationToken token)
+        Task ProcessMessages(Message message, CancellationToken token)
         {
             // Process the message
             Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
@@ -61,6 +61,8 @@ namespace SchoolMngr.Services.Notifications
             // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
             // If queueClient has already been Closed, you may chose to not call CompleteAsync() or AbandonAsync() etc. calls 
             // to avoid unnecessary exceptions.
+
+            return Task.CompletedTask;
         }
 
         Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
