@@ -24,7 +24,7 @@ namespace SchoolMngr.Services.Notifications
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddInfrastructureLayer("InfraSection")
+                .AddInfrastructureLayer(AppSettings.InfraSectionKey)
                 .AddIntegrationEventHandlers()
                 .AddSignalR();
 
