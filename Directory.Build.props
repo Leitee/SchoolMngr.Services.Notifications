@@ -1,22 +1,17 @@
 <Project>  
-  <PropertyGroup Label="SDK and Lang Versions">
-    <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-  </PropertyGroup>
+	<PropertyGroup Label="SDK and Lang Versions">
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
   
-  <ItemGroup Label="Global Package Imports">
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-  </ItemGroup>
-
-  <PropertyGroup Label="Global Package Versions">
-    <SchoolMngrSharedPackage>0.4.1</SchoolMngrSharedPackage>
-    <!--<EntityFrameworkAllPackageVersion>5.0.7</EntityFrameworkAllPackageVersion>
-    <MicrosoftExtensionsConfigurationAllPackageVersion>5.0.0</MicrosoftExtensionsConfigurationAllPackageVersion>-->
-  </PropertyGroup>
+    <ItemGroup Label="Global Package Imports">
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    </ItemGroup>
   
   <!--DO NOT CHANGE CODE BELOW-->
   <PropertyGroup Label="Check If Exist">
-    <MicroservicesTarget>$([MSBuild]::GetPathOfFileAbove('SchoolMngr.Infrastructure.Shared.csproj', '$(MSBuildThisFileDirectory)../../infrastructure/shared'))</MicroservicesTarget>
+	  <SchoolMngrSharedPackage>0.1.0</SchoolMngrSharedPackage>
+	  <MicroservicesTarget>$([MSBuild]::GetPathOfFileAbove('SchoolMngr.Infrastructure.Shared.csproj', '$(MSBuildThisFileDirectory)../../infrastructure/shared'))</MicroservicesTarget>
   </PropertyGroup>
   
   <Choose>
