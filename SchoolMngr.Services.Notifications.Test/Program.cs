@@ -1,15 +1,13 @@
 ﻿namespace SchoolMngr.Services.Notifications.FunctionalTest
 {
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Logging.Abstractions;
     using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
     using Codeit.NetStdLibrary.Base.Desentralized.EventBus;
     using Codeit.NetStdLibrary.Base.Desentralized.EventBusRabbitMQ;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Logging.Abstractions;
     using RabbitMQ.Client;
     using System;
     using System.Threading;
-    using System.Threading.Tasks;
 
     class Program
     {
@@ -37,10 +35,10 @@
             _logger = NullLoggerFactory.Instance;
             _persistentConnection = new DefaultRabbitMQPersistentConnection(_connection, _logger, _retryCount);
             _subsManager = new InMemoryEventBusSubscriptionsManager();
-            _queueClient = new EventBusRabbitMQ(_persistentConnection, _logger, null, _subsManager, BROKER_NAME, _retryCount);
+            _queueClient = new EventBusRabbitMQ(_persistentConnection, _logger, null, _subsManager, BROKER_NAME);
         }
 
-        public static void Main(string[] args)
+        public static void Main()
         {
 
             Console.WriteLine("======================================================");
@@ -48,11 +46,11 @@
             Console.WriteLine("======================================================");
 
             // Send messages.
-            new Program();
+            _ = new Program();
             for (int i = 1; i < 100; i++)
             {
                 _queueClient.Publish(new GreetingIntegrationEventPayload("Hayek", $"Dummy greeting: {i}"));
-                Console.WriteLine($"Message {i} sent at {DateTime.Now.ToString("HH:mm:ss")}!!!");
+                Console.WriteLine($"Message {i} sent at {DateTime.Now:HH:mm:ss}!!!");
                 Thread.Sleep(3000);
             }
 
