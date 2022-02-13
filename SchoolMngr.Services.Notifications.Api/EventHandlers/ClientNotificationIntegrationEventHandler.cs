@@ -1,6 +1,4 @@
 ﻿
-using SchoolMngr.Services.Notifications.Services.Interfaces;
-
 namespace SchoolMngr.Services.Notifications.IntegrationEvents;
 
 public class ClientNotificationIntegrationEventHandler : IIntegrationEventHandler<ClientNotificationIntegrationEventPayload>

@@ -1,4 +1,7 @@
 
+Log.Logger = SharedHostConfiguration.CreateSerilogLogger(nameof(SchoolMngr.Services.Notifications));
+
+Log.Information("Configuring web host ({ApplicationName})...");
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     ApplicationName = typeof(Program).Assembly.FullName,
@@ -6,64 +9,45 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     EnvironmentName = Environments.Development
 });
 
-builder.Logging.AddSerilog();
-builder.Services
-                .AddInfrastructureLayer("InfraSection")
-                .AddIntegrationEventHandlers()
-                .AddSignalR();
+builder.Logging.AddSerilog(Log.Logger);
 
-builder.Services
-                .AddHealthChecks()
-                .AddCheck("Self", _ => HealthCheckResult.Healthy());
+var services = builder.Services;
+services.AddInfrastructureLayer(AppSettings.InfraSectionKey)
+            .AddSignalR();
 
-builder.Services
-                .AddScoped<IClientNotificationService, ClientNotificationService>();
+services.AddHealthChecks().AddCheck("Self", _ => HealthCheckResult.Healthy());
 
+//Register event handlers
+services.AddSingleton<ProccessGreetingIntegrationEventHandler>();
+services.AddSingleton<ClientNotificationIntegrationEventHandler>();
+        
+//Register business services
+services.AddSingleton<IClientNotificationService, ClientNotificationService>();
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+WebApplication app = builder.Build();
 
-var app = builder.Build();
+//Subscribe event by payloads
+var eventBus = app.Services.GetRequiredService<IEventBus>();
+eventBus.Subscribe<GreetingIntegrationEventPayload, ProccessGreetingIntegrationEventHandler>();
+eventBus.Subscribe<ClientNotificationIntegrationEventPayload, ClientNotificationIntegrationEventHandler>();
 
-app
-    .UseRouting()
-    .UseEndpoints(endpoints =>
+app.UseRouting().UseEndpoints(endpoints =>
     {
         endpoints.MapHealthChecks("/hc");
-        endpoints.MapHub<NotificationsHub>("/hub/notificationhub", options => options.Transports = HttpTransports.All);
+        endpoints.MapHub<NotificationsHub>("/hub/notification", options => options.Transports = HttpTransports.All);
         endpoints.MapHub<StatusHub>("/hub/status");
     });
 
-
-app.MapGet("/echo", () =>
+try
 {
-    return $"{typeof(Program).Assembly.FullName} service is running";
-})
-.WithName("GetApplicationStatus");
-
-app.Run();
-
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    Log.Information("Starting web host ({ApplicationName})...");
+    app.Run();
 }
-
-static class StartUpExtensions
+catch (Exception ex)
 {
-    public static IServiceCollection AddIntegrationEventHandlers(this IServiceCollection services)
-    {
-        //Regiter Handlers
-        services.AddSingleton<ProccessGreetingIntegrationEventHandler>();
-        services.AddSingleton<ClientNotificationIntegrationEventHandler>();
-        return services;
-    }
-
-    public static IApplicationBuilder UseEventBus(this IApplicationBuilder app)
-    {
-        var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-        eventBus.Subscribe<GreetingIntegrationEventPayload, ProccessGreetingIntegrationEventHandler>();
-        eventBus.Subscribe<ClientNotificationIntegrationEventPayload, ClientNotificationIntegrationEventHandler>();
-        return app;
-    }
+    Log.Fatal(ex, "Application failed at start up.");
+}
+finally
+{
+    Log.CloseAndFlush();
 }
