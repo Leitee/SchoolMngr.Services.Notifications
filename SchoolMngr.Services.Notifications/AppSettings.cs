@@ -1,12 +1,11 @@
 ﻿
-namespace SchoolMngr.Services.Notifications
+namespace SchoolMngr.Services.Backoffice
 {
     using Codeit.NetStdLibrary.Base.Common;
     using SchoolMngr.Infrastructure.Shared.Configuration;
 
     public class AppSettings : BaseSettings<AppSettings>
     {
-        public const string InfraSectionKey = "InfraSection";
         public INFRASettings InfraSection { get; set; }
     }
 }
