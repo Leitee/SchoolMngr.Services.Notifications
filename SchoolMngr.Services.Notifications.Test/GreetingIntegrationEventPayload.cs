@@ -1,6 +1,6 @@
 ﻿using Codeit.Enterprise.Base.Abstractions.Desentralized;
 
-namespace SchoolMngr.Services.Notifications.FunctionalTest
+namespace SchoolMngr.Services.Notifications.Test
 {
     public class GreetingIntegrationEventPayload : IntegrationEventPayload
     {

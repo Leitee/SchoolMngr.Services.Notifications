@@ -1,0 +1,43 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:7788",
+      "sslPort": 7743
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "EventBusPassword": "guest",
+        "EventBusUserName": "guest",
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "EventBusConnection": "192.168.1.10"
+      }
+    },
+    "Kestrel": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "EventBusPassword": "guest",
+        "EventBusUserName": "guest",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "EventBusConnection": "192.168.1.10"
+      },
+      "applicationUrl": "http://localhost:7300"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api",
+      "environmentVariables": {
+        "Serilog:LogstashgUrl": "http://locahost:8080",
+        "ASPNETCORE_ENVIRONMENT": "Docker",
+        "COMPOSE_PROJECT_NAME": "SchoolMngr.Notifications"
+      },
+      "publishAllPorts": true
+    }
+  }
+}

@@ -1,4 +1,4 @@
-﻿namespace SchoolMngr.Services.Notifications.FunctionalTest
+﻿namespace SchoolMngr.Services.Notifications.Test
 {
     using Codeit.Enterprise.Base.Abstractions.Desentralized;
     using Codeit.Enterprise.Base.Desentralized.EventBus;

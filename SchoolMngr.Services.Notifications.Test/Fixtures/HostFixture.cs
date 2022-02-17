@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using SchoolMngr.Services.Notifications.Hubs;
 
-namespace SchoolMngr.Services.Notifications.FunctionalTest.Fixtures
+namespace SchoolMngr.Services.Notifications.Test.Fixtures
 {
     public class HostFixture : IHostFixture
     {
