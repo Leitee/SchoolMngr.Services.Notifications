@@ -1,8 +1,8 @@
 ﻿namespace SchoolMngr.Services.Notifications.FunctionalTest
 {
-    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
-    using Codeit.NetStdLibrary.Base.Desentralized.EventBus;
-    using Codeit.NetStdLibrary.Base.Desentralized.EventBusRabbitMQ;
+    using Codeit.Enterprise.Base.Abstractions.Desentralized;
+    using Codeit.Enterprise.Base.Desentralized.EventBus;
+    using Codeit.Enterprise.Base.Desentralized.EventBusRabbitMQ;
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Logging.Abstractions;
     using RabbitMQ.Client;

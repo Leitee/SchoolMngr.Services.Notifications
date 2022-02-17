@@ -1,8 +1,8 @@
 
 namespace SchoolMngr.Services.Notifications
 {
-    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
-    using Codeit.NetStdLibrary.Base.Desentralized.IntegrationEvent;
+    using Codeit.Enterprise.Base.Abstractions.Desentralized;
+    using Codeit.Enterprise.Base.Desentralized.IntegrationEvent;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http.Connections;
     using Microsoft.Extensions.Configuration;

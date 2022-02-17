@@ -1,6 +1,6 @@
 ﻿namespace SchoolMngr.Services.Notifications.IntegrationEvents
 {
-    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
+    using Codeit.Enterprise.Base.Abstractions.Desentralized;
     public class GreetingIntegrationEventPayload : IntegrationEventPayload
     {
         public string SenderName { get; set; }

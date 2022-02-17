@@ -1,8 +1,8 @@
 ﻿
 namespace SchoolMngr.Services.Notifications.IntegrationEvents
 {
-    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
-    using Codeit.NetStdLibrary.Base.Desentralized.IntegrationEvent;
+    using Codeit.Enterprise.Base.Abstractions.Desentralized;
+    using Codeit.Enterprise.Base.Desentralized.IntegrationEvent;
     using Microsoft.AspNetCore.SignalR;
     using Microsoft.Extensions.Logging;
     using SchoolMngr.Services.Notifications.Hubs;

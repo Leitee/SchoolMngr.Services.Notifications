@@ -8,8 +8,8 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["microservices/notifications/SchoolMngr.Services.Notifications/SchoolMngr.Services.Notifications.csproj", "microservices/notifications/SchoolMngr.Services.Notifications/"]
 COPY ["infrastructure/shared/SchoolMngr.Infrastructure.Shared.csproj", "infrastructure/shared/"]
-COPY ["../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.csproj", "../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base/"]
-COPY ["../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.Abstractions/Codeit.NetStdLibrary.Base.Abstractions.csproj", "../../Codeit.NetStdLibrary.Base/Codeit.NetStdLibrary.Base.Abstractions/"]
+COPY ["../../Codeit.Enterprise.Base/Codeit.Enterprise.Base/Codeit.Enterprise.Base.csproj", "../../Codeit.Enterprise.Base/Codeit.Enterprise.Base/"]
+COPY ["../../Codeit.Enterprise.Base/Codeit.Enterprise.Base.Abstractions/Codeit.Enterprise.Base.Abstractions.csproj", "../../Codeit.Enterprise.Base/Codeit.Enterprise.Base.Abstractions/"]
 RUN dotnet restore "microservices/notifications/SchoolMngr.Services.Notifications/SchoolMngr.Services.Notifications.csproj"
 COPY . .
 WORKDIR "/src/microservices/notifications/SchoolMngr.Services.Notifications"

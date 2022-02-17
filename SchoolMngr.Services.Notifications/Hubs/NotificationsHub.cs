@@ -1,7 +1,7 @@
 ﻿
 namespace SchoolMngr.Services.Notifications.Hubs
 {
-    using Codeit.NetStdLibrary.Base.DomainModel;
+    using Codeit.Enterprise.Base.DomainModel;
     using Microsoft.AspNetCore.SignalR;
     using System;
     using System.Threading.Tasks;
@@ -16,10 +16,10 @@ namespace SchoolMngr.Services.Notifications.Hubs
             await base.OnConnectedAsync();
         }
 
-        public override async Task OnDisconnectedAsync(Exception ex)
+        public override async Task OnDisconnectedAsync(Exception? exception)
         {
             //await Groups.RemoveFromGroupAsync(Context.ConnectionId, Context.User.Identity.Name);
-            await base.OnDisconnectedAsync(ex);
+            await base.OnDisconnectedAsync(exception);
         }
 
         public async Task SendNotificationAsync(string connectionId, string callbackName, ClientNotificationResult payload)

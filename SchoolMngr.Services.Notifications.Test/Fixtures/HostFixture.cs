@@ -1,5 +1,5 @@
-﻿using Codeit.NetStdLibrary.Base.Abstractions.Tests;
-using Codeit.NetStdLibrary.Base.DataAccess;
+﻿using Codeit.Enterprise.Base.Abstractions.Tests;
+using Codeit.Enterprise.Base.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;

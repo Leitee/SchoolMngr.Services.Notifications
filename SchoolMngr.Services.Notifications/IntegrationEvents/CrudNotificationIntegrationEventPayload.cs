@@ -3,8 +3,8 @@
 /// </summary>
 namespace SchoolMngr.Services.Notifications.IntegrationEvents
 {
-    using Codeit.NetStdLibrary.Base.Abstractions.BusinessLogic;
-    using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
+    using Codeit.Enterprise.Base.Abstractions.BusinessLogic;
+    using Codeit.Enterprise.Base.Abstractions.Desentralized;
     using System;
 
     public class CrudNotificationIntegrationEventPayload : IntegrationEventPayload
