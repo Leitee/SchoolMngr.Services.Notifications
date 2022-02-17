@@ -1,4 +1,4 @@
-﻿using Codeit.NetStdLibrary.Base.Desentralized.IntegrationEvent;
+﻿using Codeit.Enterprise.Base.Desentralized.IntegrationEvent;
 
 namespace SchoolMngr.Services.Notifications.Services.Interfaces;
 

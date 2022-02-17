@@ -1,4 +1,4 @@
-﻿using Codeit.NetStdLibrary.Base.DomainModel;
+﻿using Codeit.Enterprise.Base.DomainModel;
 using Microsoft.AspNetCore.SignalR;
 
 namespace SchoolMngr.Services.Notifications.Hubs;
