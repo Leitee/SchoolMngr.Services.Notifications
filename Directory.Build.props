@@ -10,7 +10,7 @@
   
   <!--DO NOT CHANGE CODE BELOW-->
   <PropertyGroup Label="Check If Exist">
-	  <SchoolMngrSharedPackage>0.2.0</SchoolMngrSharedPackage>
+	  <SchoolMngrSharedPackage>0.4.0</SchoolMngrSharedPackage>
 	  <MicroservicesTarget>$([MSBuild]::GetPathOfFileAbove('SchoolMngr.Infrastructure.Shared.csproj', '$(MSBuildThisFileDirectory)../../infrastructure/shared'))</MicroservicesTarget>
   </PropertyGroup>
   

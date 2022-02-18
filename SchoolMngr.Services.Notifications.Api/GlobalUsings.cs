@@ -1,6 +1,6 @@
-﻿global using Codeit.NetStdLibrary.Base.Abstractions.Desentralized;
-global using Codeit.NetStdLibrary.Base.Common;
-global using Codeit.NetStdLibrary.Base.Desentralized.IntegrationEvent;
+﻿global using Codeit.Enterprise.Base.Abstractions.Desentralized;
+global using Codeit.Enterprise.Base.Common;
+global using Codeit.Enterprise.Base.Desentralized.IntegrationEvent;
 global using Microsoft.AspNetCore.Http.Connections;
 global using Microsoft.AspNetCore.SignalR;
 global using Microsoft.Extensions.Diagnostics.HealthChecks;
